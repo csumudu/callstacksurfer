@@ -22,7 +22,7 @@ const links = [
   {
     name: "Linkedin",
     icon: "/images/links/linkedin.svg",
-    value: "www.linkedin.com/in/sumudu-jayasinghe",
+    value: "https://www.linkedin.com/in/sumudu-jayasinghe",
   },
   {
     name: "Github",
