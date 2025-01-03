@@ -110,6 +110,9 @@ Timeout
 ### Example 3: Nested Microtasks
 
 \`\`\`javascript
+
+setTimeout(()=>console.log("Timeout"),0)
+
 Promise.resolve()
   .then(() => {
     console.log("Promise 1");
@@ -126,14 +129,17 @@ console.log("End of Script");
 End of Script
 Promise 1
 Promise 2
+Timeout
 \`\`\`
 
 **Explanation:**
 
-1. The first \`.then\` adds its callback to the microtask queue.
+1. First Timeout callback added to Macro Task queue
+2. After that promise immediately gets resolved and \`.then\` adds its callback to the microtask queue.
 2. \`console.log("End of Script")\` executes synchronously.
 3. \`Promise 1\` logs, and another microtask is created for \`Promise 2\`.
 4. The microtask queue processes \`Promise 2\`.
+5. Timeout callback gets executed from Macro task queue.
 
 ---
 
@@ -156,7 +162,7 @@ Happy coding!
   {
     id: "200",
     date: "23 JAN 2022",
-    title: "Angular Micro frontend with Webpack fedarated Modules",
+    title: "Implementing Micro Frontend in Angular Using Webpack Federated Modules",
     link: "/articles/200",
     content: `
 # Implementing Micro Frontend in Angular Using Webpack Federated Modules

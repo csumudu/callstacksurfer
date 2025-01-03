@@ -34,7 +34,7 @@ export default function Header({ slug }: any) {
       >
         <div className="flex flex-1 items-center">
           <Logo />
-          {segment}-{slug}
+          {segment}
         </div>
 
         <ul className="flex 2 items-center justify-end gap-3">
@@ -42,7 +42,9 @@ export default function Header({ slug }: any) {
             <Link
               href="/"
               className={`${
-                !segment ? "text-gray-900 font-bold" : "text-gray-500"
+                !segment || segment == "articles"
+                  ? "text-gray-900 font-bold"
+                  : "text-gray-500"
               } hover:text-gray-600`}
             >
               Articles
