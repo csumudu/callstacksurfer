@@ -140,6 +140,14 @@ const certifications: any = [
   },
 ];
 
+const interests = [
+  "Mathematics",
+  "Machine Learning",
+  "Generative AI",
+  "Sports",
+  "Voluntary services",
+];
+
 export default function MyProfile() {
   return (
     <div className="px-20 flex justify-center flex-col items-center">
@@ -198,6 +206,15 @@ export default function MyProfile() {
             <img src={`/images/badges/${icon}`} className="w-52" />
             <div className="font-light pt-2">{name}</div>
           </a>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-medium p-2 pb-3">Other Interests</h2>
+      <div className="pb-10 grid grid-cols-5 gap-2">
+        {interests.map((int) => (
+          <div key={int} className="rounded-lg border-2 px-3 py-2 bg-white">
+            {int}
+          </div>
         ))}
       </div>
     </div>
