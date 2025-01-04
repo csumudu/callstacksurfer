@@ -1,5 +1,5 @@
 import "./css/style.css";
-
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -25,6 +25,7 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
