@@ -34,7 +34,6 @@ export default function Header({ slug }: any) {
       >
         <div className="flex flex-1 items-center">
           <Logo />
-          {segment}
         </div>
 
         <ul className="flex 2 items-center justify-end gap-3">

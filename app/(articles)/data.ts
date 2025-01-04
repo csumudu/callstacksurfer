@@ -1,7 +1,8 @@
 export const ArticleCol = [
   {
     id: "300",
-    date: "10 AUG 2023",
+    date: "10 Aug 2023",
+    thumbnail: "/images/thumbnails/micro-task-queue.webp",
     title:
       "Understanding JavaScript Microtask Queue: A Deep Dive with Examples",
     link: "/articles/300",
@@ -161,8 +162,10 @@ Happy coding!
   },
   {
     id: "200",
-    date: "23 JAN 2022",
-    title: "Implementing Micro Frontend in Angular Using Webpack Federated Modules",
+    date: "23 Jan 2022",
+    title:
+      "Implementing Micro Frontend in Angular Using Webpack Federated Modules",
+    thumbnail: "/images/thumbnails/module-federation.webp",
     link: "/articles/200",
     content: `
 # Implementing Micro Frontend in Angular Using Webpack Federated Modules
@@ -365,7 +368,8 @@ In this guide, we demonstrated the steps to create a host and micro frontend app
   },
   {
     id: "100",
-    date: "02 JAN 2022",
+    date: "02 Jan 2022",
+    thumbnail: "/images/thumbnails/micro-task-queue.webp",
     title: "Understanding Tagged Template Literals in JavaScript",
     link: "/articles/100",
     content: `
