@@ -369,7 +369,7 @@ In this guide, we demonstrated the steps to create a host and micro frontend app
   {
     id: "100",
     date: "02 Jan 2022",
-    thumbnail: "/images/thumbnails/micro-task-queue.webp",
+    thumbnail: "/images/thumbnails/template-literals.webp",
     title: "Understanding Tagged Template Literals in JavaScript",
     link: "/articles/100",
     content: `

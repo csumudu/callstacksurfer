@@ -57,16 +57,25 @@ const otherSkills: any = [
     name: "Graphql",
   },
   {
-    name: "RestAPI",
+    name: "RestAPI Integration",
   },
   {
     name: "Cybersecurity",
   },
   {
-    name: "Nextjs",
+    name: "Rust",
   },
   {
-    name: "Rust",
+    name: "Go",
+  },
+  {
+    name: "Python",
+  },
+  {
+    name: "Java",
+  },
+  {
+    name: "Nextjs",
   },
   {
     name: "Docker",
@@ -97,9 +106,6 @@ const otherSkills: any = [
   },
   {
     name: "AWS Serverless Development",
-  },
-  {
-    name: "Java",
   },
 ];
 const certifications: any = [
