@@ -156,11 +156,11 @@ const interests = [
 
 export default function MyProfile() {
   return (
-    <div className="px-20 flex justify-center flex-col items-center">
+    <div className="md:px-20 flex justify-center flex-col items-center">
       <h1 className="text-5xl font-thin">Sumudu Jayasinghe</h1>
       <div className="pt-4">
         {contact.map((c) => (
-          <div className="flex gap-5" key={c.name}>
+          <div className="flex md:gap-5" key={c.name}>
             <img src={c.icon} className="w-5"></img>
             <div>{c.value}</div>
           </div>
@@ -180,7 +180,7 @@ export default function MyProfile() {
       </div>
 
       <h2 className="text-xl font-medium p-4 pb-3">Primary Skills</h2>
-      <div className="pb-10 flex gap-5">
+      <div className="pb-10 flex flex-wrap gap-2 md:gap-5 justify-center items-center">
         {primarySkills.map(({ icon, name }) => (
           <div
             key={name}
@@ -192,7 +192,7 @@ export default function MyProfile() {
       </div>
 
       <h2 className="text-xl font-medium p-2 pb-3">Other Skills</h2>
-      <div className="pb-10 grid grid-cols-4 gap-3">
+      <div className="pb-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         {otherSkills.map(({ name }: any) => (
           <div key={name} className="rounded-lg border-2 px-3 py-2 bg-white">
             {name}
@@ -201,7 +201,7 @@ export default function MyProfile() {
       </div>
 
       <h2 className="text-xl font-medium p-2 pb-3">Certifications</h2>
-      <div className="pb-10 grid grid-cols-3 gap-3">
+      <div className="pb-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {certifications.map(({ icon, name, link }: any) => (
           <a
             href={link}
@@ -216,7 +216,7 @@ export default function MyProfile() {
       </div>
 
       <h2 className="text-xl font-medium p-2 pb-3">Other Interests</h2>
-      <div className="pb-10 grid grid-cols-5 gap-2">
+      <div className="pb-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
         {interests.map((int) => (
           <div key={int} className="rounded-lg border-2 px-3 py-2 bg-white">
             {int}
