@@ -1,22 +1,13 @@
-"use client";
+import { MarkdownWrapper } from "@/components/markdown-wrapper";
+import { API } from "@/db/sandbox/sandbox";
 
-import { useEffect, useState } from "react";
-import { ArticleCol } from "../../data";
-import { useParams } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-
-export default function Article() {
-  const [article, setArticle] = useState<any>(null);
-
-  const params = useParams<{ id: string }>();
-
-  useEffect(() => {
-    setArticle(ArticleCol.find((a) => a.id == params.id));
-  }, [params.id]);
-
+export default async function Article({ params }: { params: { id: string } }) {
+  const id = (await params).id;
+  const article = await API.getArticleById(id);
+  
   return (
     <div className="px-20 prose max-w-full">
-      <ReactMarkdown>{article?.content}</ReactMarkdown>
+      <MarkdownWrapper>{article?.content}</MarkdownWrapper>
     </div>
   );
 }
