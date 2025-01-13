@@ -34,22 +34,27 @@ const primarySkills = [
   {
     name: "js",
     icon: <JSIcon />,
+    delay: "motion-delay-75",
   },
   {
     name: "ts",
     icon: <TSIcon />,
+    delay: "motion-delay-150",
   },
   {
     name: "ng",
     icon: <NGIcon />,
+    delay: "motion-delay-200",
   },
   {
     name: "react",
     icon: <ReactIcon />,
+    delay: "motion-delay-300",
   },
   {
     name: "node",
     icon: <NodeIcon />,
+    delay: "motion-delay-500",
   },
 ];
 const otherSkills: any = [
@@ -181,10 +186,10 @@ export default function MyProfile() {
 
       <h2 className="text-xl font-medium p-4 pb-3">Primary Skills</h2>
       <div className="pb-10 flex flex-wrap gap-2 md:gap-5 justify-center items-center">
-        {primarySkills.map(({ icon, name }) => (
+        {primarySkills.map(({ icon, name, delay }) => (
           <div
             key={name}
-            className="rounded-lg overflow-hidden border shadow-2xl p-3"
+            className={`rounded-lg overflow-hidden border shadow-2xl p-3 motion-opacity-in-0 motion-translate-y-in-50 ${delay}`}
           >
             {React.cloneElement(icon)}
           </div>

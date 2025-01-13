@@ -8,7 +8,11 @@ class DataSandbox {
   }
 
   getArticles(): Promise<Array<Article>> {
-    return this.client.article.findMany();
+    return this.client.article.findMany({
+      orderBy: {
+        date: "desc",
+      },
+    });
   }
 
   getArticleById(id: string): Promise<Article | null> {

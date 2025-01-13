@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Logo({height=75}) {
   return (
-    <Link href="/" className="inline-flex" aria-label="Cruip">
+    <Link href="/" className="inline-flex -motion-translate-y-in-50 motion-ease-bounce" aria-label="Cruip">
       <svg viewBox="0 0 250 75" width="250" height={height} xmlns="http://www.w3.org/2000/svg">
         <g className="layer">
           <title>Layer 1</title>
