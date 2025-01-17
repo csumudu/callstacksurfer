@@ -1,5 +1,6 @@
 import { Article } from "@prisma/client";
 import { prisma } from "../connection";
+import { ArticleExtended } from "@/models/data.models";
 
 class DataSandbox {
   client;
@@ -15,8 +16,11 @@ class DataSandbox {
     });
   }
 
-  getArticleById(id: string): Promise<Article | null> {
+  getArticleById(id: string): Promise<ArticleExtended | null> {
     return this.client.article.findFirst({
+      include: {
+        articleType: true,
+      },
       where: {
         id,
       },

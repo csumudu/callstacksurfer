@@ -13,10 +13,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model ArticleType {
+  typeId   String    @id @default(uuid()) @map("_id") @db.ObjectId
+  name     String
+  articles Article[]
+}
+
 model Article {
-  id        String   @id @default(uuid()) @map("_id") @db.ObjectId
-  date      DateTime @default(now())
-  thumbnail String   @default("")
-  title     String
-  content   String
+  id            String      @id @default(uuid()) @map("_id") @db.ObjectId
+  date          DateTime    @default(now())
+  thumbnail     String      @default("")
+  title         String
+  content       String
+  articleTypeId String      @db.ObjectId
+  articleType   ArticleType @relation(fields: [articleTypeId], references: [typeId])
+  componentName String?
 }
