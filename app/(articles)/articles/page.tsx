@@ -7,7 +7,7 @@ export default async function ArticlesHome() {
     <div className="flex justify-center align-middle">
       <ul>
         {articles.map((a,i) => (
-          <li key={a.id} className={`motion-opacity-in-0 motion-duration-[${1*i}s] motion-delay-[${100 * i*3}ms]`}>
+          <li key={a.id} className={`motion-opacity-in-0 motion-duration-1s]`}>
             <ArticleListItem article={a} />
           </li>
         ))}

@@ -1,33 +1,8 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CssCalculator from "../css-calculator/ccs-calculator";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { CssResultEvent } from "@/models/data.models";
-import Result from "../css-calculator/result";
+import WithResults from "../css-calculator/with-result";
 
 const CssSpecificity = () => {
-  const [selectors, setSelectors] = useState([{ id: 1, total: 0 }]);
-  const [resCol, setResCol] = useState<Array<CssResultEvent>>([]);
-
-  const addSelector = () => {
-    setSelectors((s) => [...s, { id: s.length + 1, total: 0 }]);
-  };
-
-  const closeHandler = (selector: { id: number }) => {
-    setResCol((col) => col.filter((c) => c.id != selector.id));
-    setSelectors((all) => all.filter((s) => s.id != selector.id));
-  };
-
-  const changeHandler = (e: CssResultEvent) => {
-    setResCol((col) => {
-      const excluded = col.filter((c) => c.id != e.id);
-      const res = [...excluded, e].sort((a, b) => +b.value - +a.value);
-      return res;
-    });
-  };
-
   return (
     <div>
       <h1>CSS Specificity Calculator</h1>
@@ -59,7 +34,7 @@ const CssSpecificity = () => {
         </p>
         <p>
           <b>
-            make this process easier, you can use a tool that calculates the
+            Make this process easier, you can use a tool that calculates the
             specificity value for any given selector. You can even add multiple
             selectors by pressing the "+" button. The result section will
             display the selectors in order of specificity, making it clear which
@@ -69,29 +44,7 @@ const CssSpecificity = () => {
           </b>
         </p>
       </div>
-      <div>
-        <Result res={resCol} />
-      </div>
-      <div>
-        <div className="flex justify-start">
-          <div
-            onClick={addSelector}
-            className="border border-slate-400 px-6 cursor-pointer rounded-md transition-colors hover:bg-slate-200"
-          >
-            <FontAwesomeIcon icon={faPlus} />
-          </div>
-        </div>
-        {selectors.map((s, i) => (
-          <div key={s.id} className="py-3">
-            <CssCalculator
-              id={s.id}
-              change={(e) => changeHandler(e)}
-              showClose={i != 0}
-              close={() => closeHandler(s)}
-            />
-          </div>
-        ))}
-      </div>
+      <WithResults />
     </div>
   );
 };

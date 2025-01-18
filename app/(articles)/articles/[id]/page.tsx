@@ -10,7 +10,6 @@ export default async function Article({
   const id = (await params).id;
   const article = await API.getArticleById(id);
 
-  console.log("-->", article);
   return (
     <div className="px-20 prose max-w-full">
       {article &&

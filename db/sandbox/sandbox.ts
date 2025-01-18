@@ -26,6 +26,17 @@ class DataSandbox {
       },
     });
   }
+  
+  getArticleByTitle(title: string): Promise<ArticleExtended | null> {
+    return this.client.article.findFirst({
+      include: {
+        articleType: true,
+      },
+      where: {
+        title,
+      },
+    });
+  }
 }
 
 export const API = new DataSandbox();

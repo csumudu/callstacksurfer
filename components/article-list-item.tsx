@@ -6,9 +6,10 @@ export default function ArticleListItem({ article }: any) {
     <Link href={`/articles/${article.id}`}>
       <div
         className="grid sm:grid-cols-2 md:grid-cols-3   rounded-lg gap-5 p-3  
-      items-center justify-between cursor-pointer border-b 
-      bg-gradient-to-r hover:from-gray-50 hover:via-gray-200 hover:to-gray-50 
-      hover:transition-all hover:duration-300"
+      items-center justify-between cursor-pointer border-b
+      transition duration-500
+      hover:scale-[1.025] 
+     "
       >
         <div
           className={`bg-center  sm:justify-self-start  md:justify-self-end bg-cover size-40 rounded-md drop-shadow-lg`}

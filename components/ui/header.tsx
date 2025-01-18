@@ -7,6 +7,8 @@ import Logo from "./logo";
 export default function Header({ slug }: any) {
   const segment = useSelectedLayoutSegment();
 
+  console.log("==>", segment);
+
   return (
     <header
       className="fixed  z-30 w-full bg-white/90  shadow-lg
@@ -41,7 +43,7 @@ export default function Header({ slug }: any) {
             <Link
               href="/"
               className={`${
-                !segment || segment == "articles"
+                segment == "(default)" || segment == "(articles)"
                   ? "text-gray-900 font-bold"
                   : "text-gray-500"
               } hover:text-gray-600`}
@@ -51,9 +53,21 @@ export default function Header({ slug }: any) {
           </li>
           <li className="py-1 px-4 rounded hover:bg-slate-200">
             <Link
+              href="/tools"
+              className={`${
+                segment == "(tools)"
+                  ? "text-gray-900 font-bold"
+                  : "text-gray-500"
+              } hover:text-gray-600`}
+            >
+              Tools
+            </Link>
+          </li>
+          <li className="py-1 px-4 rounded hover:bg-slate-200">
+            <Link
               href="/profile"
               className={`${
-                segment == "profile"
+                segment == "(profile)"
                   ? "text-gray-900 font-bold"
                   : "text-gray-500"
               } hover:text-gray-600`}
