@@ -8,3 +8,8 @@
 
 @import "tailwindcss/utilities";
 
+
+
+.article:hover .thumbnail {
+  transform: scale(1.15);
+}

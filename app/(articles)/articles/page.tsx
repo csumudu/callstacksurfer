@@ -4,14 +4,10 @@ import { API } from "@/db/sandbox/sandbox";
 export default async function ArticlesHome() {
   const articles = await API.getArticles();
   return (
-    <div className="flex justify-center align-middle">
-      <ul>
-        {articles.map((a,i) => (
-          <li key={a.id} className={`motion-opacity-in-0 motion-duration-1s]`}>
-            <ArticleListItem article={a} />
-          </li>
-        ))}
-      </ul>
+    <div className="grid gap-5  grid-cols-2 justify-center align-middle">
+      {articles.map((a, i) => (
+        <ArticleListItem key={a.id} article={a} />
+      ))}
     </div>
   );
 }
