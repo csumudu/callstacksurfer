@@ -35,11 +35,19 @@ const BSMainContainer = () => {
       </div>
 
       {stp.map((s) => (
-        <div className="border-2 p-3 rounded-md mb-2 border-pink-600">
+        <div
+          key={s.id}
+          className="border-2 p-3 rounded-md mb-2 border-pink-600"
+        >
           <div className="text-white font-bold text-sm">{s.id}</div>
           <div className="flex flex-col gap-2">
             {s.parameters.map((p) => (
-              <div className="bg-pink-900 text-pink-200 italic font-thin text-sm p-1 px-3 rounded">{p}</div>
+              <div
+                key={p}
+                className="bg-pink-900 text-pink-200 italic font-thin text-sm p-1 px-3 rounded"
+              >
+                {p}
+              </div>
             ))}
           </div>
         </div>

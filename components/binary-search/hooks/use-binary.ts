@@ -76,6 +76,7 @@ export const useBinary = (): [
     target: number
   ) => {
     const isFound = value == target;
+    const isTargetIsGreater = target > value;
 
     const stp: Step = {
       id: "STEP : " + step,
@@ -84,14 +85,18 @@ export const useBinary = (): [
         `Start Index Set To : ${start}`,
         `End Index Set To : ${end}`,
         `Middle Index Set To : ${mid}`,
-        `Is Searched value ${target} found in ${mid} index Value ${value}: ${isFound}`,
+        `Is Searched value ${target} found in Mid Index position(${mid}) Value(${value}): ${isFound ? "YES" : "NO"}`,
         isFound ? `Stop Iteration` : "",
 
         !isFound
-          ? target < value
-            ? `Searched value ${target} is Less than the Mid index(${mid}) Value(${value})`
-            : `Searched value ${target} is Greater than the Mid index(${mid}) Value(${value})`
+          ? isTargetIsGreater
+            ? `Searched value ${target} is Greater than the Mid index(${mid}) Value(${value})`
+            : `Searched value ${target} is Less than the Mid index(${mid}) Value(${value})`
           : "",
+
+        !isFound && isTargetIsGreater
+          ? `Adjust the Start Index to ${mid + 1} and ignore Indexes Less Than ${mid}`
+          : `Adjust the End Index to ${mid - 1} and ignore Indexes Greater Than ${mid}`,
       ].filter((x) => !!x),
     };
 
