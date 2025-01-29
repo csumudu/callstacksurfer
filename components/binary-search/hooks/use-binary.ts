@@ -121,7 +121,7 @@ export const useBinary = (): [
         start,
         end,
         mid,
-        iterCount,
+        iterCount - 1,
         getInstructions(iterCount - 1, start, end, mid, item.value, t)
       );
 
