@@ -1,5 +1,5 @@
+import { faPlay, faRepeat } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faPause, faRepeat } from "@fortawesome/free-solid-svg-icons";
 import { FC, useEffect, useReducer } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -15,11 +15,6 @@ const InitMenu = [
     action: CtrlActions.PLAY,
     icon: faPlay,
     isActive: true,
-  },
-  {
-    action: CtrlActions.PAUSE,
-    icon: faPause,
-    isActive: false,
   },
   {
     action: CtrlActions.RESET,
@@ -38,8 +33,7 @@ const PlayControls: FC<{
         case "act-changed": {
           const type = act.payload;
           if (type) {
-            
-            return state.map((ac) => {
+            return [...state].map((ac) => {
               ac.isActive = ac.action != type;
               return ac;
             });

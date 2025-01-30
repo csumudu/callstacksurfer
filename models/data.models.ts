@@ -8,6 +8,7 @@ export interface ArticleExtended extends Article {
 export const ArticleComponentMap: any = {
   CssSpecificity: lazy(() => import("../components/articles/css-specificity")),
   BinarySearch: lazy(() => import("../components/articles/binary-search")),
+  BubleSort: lazy(() => import("../components/articles/buble-sort")),
 };
 
 export enum FragName {

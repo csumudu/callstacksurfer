@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'css-tool': "url('/images/tools/css-tool.webp')"        
+        "css-tool": "url('/images/tools/css-tool.webp')",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
@@ -31,6 +31,12 @@ module.exports = {
         "7xl": ["4.5rem", { lineHeight: "1", letterSpacing: "-0.037em" }],
       },
       keyframes: {
+        flipHorizontal: {
+          "50%": { transform: "rotateY(180deg)" },
+        },
+        flipVertical: {
+          "50%": { transform: "rotateX(180deg)" },
+        },
         "code-1": {
           "0%": { opacity: 0 },
           "2.5%": { opacity: 1 },
@@ -85,6 +91,10 @@ module.exports = {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
+      },
+      animation: {       
+        hflip: 'flipHorizontal 1s ',
+        vflip: 'flipVertical 1s ',      
       },
     },
   },

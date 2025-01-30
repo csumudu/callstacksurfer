@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
-export const useRandom = (len: number = 100): [string, string, () => void] => {
+export const useRandom = (
+  len: number = 100
+): [string, string, () => void, (size: number) => void] => {
+  const [listSize, setListSize] = useState(len);
   const [sourceStr, setSourceStr] = useState<string>("");
   const [targetStr, setTargetStr] = useState<string>("");
 
@@ -9,10 +12,10 @@ export const useRandom = (len: number = 100): [string, string, () => void] => {
   }, [len]);
 
   const getRandomCol = () => {
-    const array = Array.from({ length: len }, () =>
+    const array = Array.from({ length: listSize }, () =>
       Math.floor(Math.random() * 1000)
     );
-    const searchNum = array[Math.floor(Math.random() * len)];
+    const searchNum = array[Math.floor(Math.random() * listSize)];
 
     return [array, searchNum];
   };
@@ -23,5 +26,5 @@ export const useRandom = (len: number = 100): [string, string, () => void] => {
     setTargetStr(String(tar));
   };
 
-  return [sourceStr, targetStr, regenerate];
+  return [sourceStr, targetStr, regenerate, setListSize];
 };

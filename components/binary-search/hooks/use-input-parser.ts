@@ -1,10 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 import { Item } from "../models";
 
-export const useInputParser = (): [
-  (s: string) => Array<Item>,
-  (t: string) => void,
-] => {
+export const useInputParser = (
+  isSorted: boolean = true
+): [(s: string) => Array<Item>, (t: string) => void] => {
   const parseSource = (source: string): Array<Item> => {
     console.log("Singal collection constructed");
     const src = String(source)
@@ -25,19 +24,19 @@ export const useInputParser = (): [
 
     const unique = [...(new Set(src) as any)];
 
-    const items = unique
-      .sort((a, b) => a - b)
-      .map((n, i) => {
-        return {
-          id: uuidv4(),
-          value: n,
-          isActive: true,
-          isMiddle: false,
-          isNeedle: false,
-          isStart: false,
-          isEnd: false,
-        } as Item;
-      });
+    const sorted = isSorted ? unique.sort((a, b) => a - b) : unique;
+
+    const items = sorted.map((n, i) => {
+      return {
+        id: uuidv4(),
+        value: n,
+        isActive: true,
+        isMiddle: false,
+        isNeedle: false,
+        isStart: false,
+        isEnd: false,
+      } as Item;
+    });
 
     return items;
   };

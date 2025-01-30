@@ -5,10 +5,13 @@ export interface Item {
   id: string;
   value: number;
   isActive: boolean;
-  isStart: boolean;
-  isEnd: boolean;
-  isNeedle: boolean;
-  isMiddle: boolean;
+  isStart?: boolean;
+  isEnd?: boolean;
+  isNeedle?: boolean;
+  isMiddle?: boolean;
+  isFlipA?: boolean;
+  isFlipB?: boolean;
+  isSorted?: boolean;
 }
 
 export interface SearchStep {
