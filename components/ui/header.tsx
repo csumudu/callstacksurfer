@@ -64,6 +64,19 @@ export default function Header({ slug }: any) {
             </Link>
           </li>
           <li className="py-1 px-4 rounded hover:bg-slate-200">
+            <a
+              href="https://algo.callstacksurfer.com/"
+              target="_blank"
+              className={`${
+                segment == "(tools)"
+                  ? "text-gray-900 font-bold"
+                  : "text-gray-500"
+              } hover:text-gray-600`}
+            >
+              Algorithms
+            </a>
+          </li>
+          <li className="py-1 px-4 rounded hover:bg-slate-200">
             <Link
               href="/profile"
               className={`${
