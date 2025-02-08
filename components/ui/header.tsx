@@ -67,11 +67,7 @@ export default function Header({ slug }: any) {
             <a
               href="https://algo.callstacksurfer.com/"
               target="_blank"
-              className={`${
-                segment == "(tools)"
-                  ? "text-gray-900 font-bold"
-                  : "text-gray-500"
-              } hover:text-gray-600`}
+              className="text-gray-500 hover:text-gray-600"
             >
               Algorithms
             </a>
